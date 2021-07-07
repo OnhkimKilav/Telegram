@@ -4,8 +4,11 @@
     <style name="settingsButtons">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/vertical_margin</item>
-        <item name="android:layout_marginStart">@dimen/horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/vertical_margin</item>
+        <item name="android:paddingStart">@dimen/horizontal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_effect</item>
+        <item name="android:focusable">true</item>
     </style>
 
     <style name="normalText">
@@ -28,5 +31,12 @@
         <item name="android:background">@color/gray</item>
         <item name="android:layout_marginTop">@dimen/vertical_margin</item>
         <item name="android:layout_marginEnd">@dimen/horizontal_margin</item>
+    </style>
+
+    <style name="mainToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">@color/primaryAppColor</item>
+        <item name="android:theme">@style/MaterialDrawerTheme.ActionBar</item>
     </style>
 </resources>
