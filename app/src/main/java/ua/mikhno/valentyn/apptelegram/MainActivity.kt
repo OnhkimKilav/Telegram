@@ -1,8 +1,10 @@
 package ua.mikhno.valentyn.apptelegram
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import ua.mikhno.valentyn.apptelegram.activities.RegisterActivity
 import ua.mikhno.valentyn.apptelegram.databinding.ActivityMainBinding
 import ua.mikhno.valentyn.apptelegram.ui.fragments.ChatFragment
 import ua.mikhno.valentyn.apptelegram.ui.objects.AppDrawer
@@ -25,10 +27,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolBar)
-        mAppDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer, ChatFragment()).commit()
+        if(false) {
+            setSupportActionBar(mToolBar)
+            mAppDrawer.create()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.dataContainer, ChatFragment()).commit()
+        }else{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
