@@ -1,9 +1,9 @@
 package ua.mikhno.valentyn.apptelegram.ui.fragments
 
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
 import ua.mikhno.valentyn.apptelegram.R
+import ua.mikhno.valentyn.apptelegram.utils.showToast
 
 class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) {
 
@@ -17,7 +17,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
 
     private fun sendCode() {
         if (register_input_phone_number.text.toString().isEmpty()) {
-            Toast.makeText(activity, "Введите номер телефона", Toast.LENGTH_SHORT).show()
+            showToast("Введите номер телефона")
         }else{
             parentFragmentManager.beginTransaction()
                 .replace(R.id.registerDataContainer, EnterCodeFragment())

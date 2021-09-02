@@ -1,12 +1,10 @@
 package ua.mikhno.valentyn.apptelegram.ui.fragments
 
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 import ua.mikhno.valentyn.apptelegram.R
 import ua.mikhno.valentyn.apptelegram.utils.AppTextWatcher
+import ua.mikhno.valentyn.apptelegram.utils.showToast
 
 class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
     override fun onStart() {
@@ -20,6 +18,6 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
     }
 
     private fun verificationCode() {
-        Toast.makeText(activity, "Ok", Toast.LENGTH_SHORT).show()
+        showToast("Ok")
     }
 }
