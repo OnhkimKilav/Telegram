@@ -8,6 +8,8 @@ import ua.mikhno.valentyn.apptelegram.activities.RegisterActivity
 import ua.mikhno.valentyn.apptelegram.databinding.ActivityMainBinding
 import ua.mikhno.valentyn.apptelegram.ui.fragments.ChatFragment
 import ua.mikhno.valentyn.apptelegram.ui.objects.AppDrawer
+import ua.mikhno.valentyn.apptelegram.utils.replaceActivity
+import ua.mikhno.valentyn.apptelegram.utils.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -30,11 +32,9 @@ class MainActivity : AppCompatActivity() {
         if(false) {
             setSupportActionBar(mToolBar)
             mAppDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatFragment()).commit()
+            replaceFragment(ChatFragment())
         }else{
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
 
     }

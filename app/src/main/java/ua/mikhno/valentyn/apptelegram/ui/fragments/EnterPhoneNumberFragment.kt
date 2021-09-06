@@ -3,6 +3,7 @@ package ua.mikhno.valentyn.apptelegram.ui.fragments
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
 import ua.mikhno.valentyn.apptelegram.R
+import ua.mikhno.valentyn.apptelegram.utils.replaceFragment
 import ua.mikhno.valentyn.apptelegram.utils.showToast
 
 class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) {
@@ -19,10 +20,7 @@ class EnterPhoneNumberFragment : Fragment(R.layout.fragment_enter_phone_number) 
         if (register_input_phone_number.text.toString().isEmpty()) {
             showToast("Введите номер телефона")
         }else{
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.registerDataContainer, EnterCodeFragment())
-                .addToBackStack(null)
-                .commit()
+            replaceFragment(EnterCodeFragment())
         }
     }
 
